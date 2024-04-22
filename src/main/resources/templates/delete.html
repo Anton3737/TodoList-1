@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Note</title>
+
+
+</head>
+
+<body>
+    <form action="/notes/delete/${note.id}" method="post">
+        <div>
+            <label for="id-for-delete">Id for delete:</label>
+            <input type="text" name="id" id="id-for-delete" value="${note.id}" readonly/>
+        </div>
+
+        <div>
+            <button type="submit">Delete</button>
+        </div>
+    </form>
+</body>
+
+</html>
