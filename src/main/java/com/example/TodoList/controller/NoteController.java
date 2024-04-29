@@ -49,7 +49,7 @@ public class NoteController {
         updateNote.setId(id);
         updateNote.setTitle(title);
         updateNote.setContent(content);
-        newNoteService.update(updateNote);
+        newNoteService.update(id,updateNote);
         return new ModelAndView("redirect:/notes/list");
     }
 

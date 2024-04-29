@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -30,19 +29,18 @@ public class NewNoteService implements NoteDao {
     }
 
     @Override
-    public Optional<Note> deleteById(long id) {
-        return noteRepository.findById(id);
+    public void deleteById(long id) {
+        noteRepository.deleteById(id);
     }
 
     @Override
-    public Optional<Note> getById(long id) {
-        return noteRepository.findById(id);
+    public Note getById(long id) {
+        return noteRepository.getReferenceById(id);
     }
 
-
     @Override
-    public Note update(Note updateNote) {
-        Note note = new Note();
+    public Note update(long id,Note updateNote) {
+        Note note = noteRepository.getReferenceById(id);
         note.setTitle(updateNote.getTitle());
         note.setContent(updateNote.getContent());
         noteRepository.save(note);

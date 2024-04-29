@@ -11,9 +11,9 @@ public interface NoteDao {
 
     Note add(Note note);
 
-    Optional<Note> deleteById(long id);
+    void deleteById(long id);
 
-    Optional<Note> getById(long id);
+    Note getById(long id);
 
-    Note update(Note updateNote);
+    Note update(long id,Note updateNote);
 }
