@@ -3,6 +3,7 @@ package com.example.TodoList.view;
 import com.example.TodoList.model.Note;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface NoteDao {
 
@@ -10,9 +11,9 @@ public interface NoteDao {
 
     Note add(Note note);
 
-    void deleteById(String id);
+    Optional<Note> deleteById(long id);
 
-    Note getById(String id);
+    Optional<Note> getById(long id);
 
-    void update(Note updateNote);
+    Note update(Note updateNote);
 }

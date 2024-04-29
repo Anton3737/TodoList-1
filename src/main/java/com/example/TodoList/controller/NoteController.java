@@ -1,6 +1,6 @@
 package com.example.TodoList.controller;
 
-import com.example.TodoList.view.NoteService;
+import com.example.TodoList.view.NewNoteService;
 import com.example.TodoList.model.Note;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +15,16 @@ import java.util.UUID;
 @RequestMapping("/notes")
 public class NoteController {
 
+
     @Autowired
-    private NoteService noteService;
+    private NewNoteService newNoteService;
 
     // Read
+
     @GetMapping("/list")
     public ModelAndView getAllNotes() {
         ModelAndView modelAndView = new ModelAndView("allList");
-        modelAndView.addObject("notes", noteService.listAll());
+        modelAndView.addObject("notes", newNoteService.listAll());
         return modelAndView;
     }
 
@@ -37,31 +39,31 @@ public class NoteController {
         Note newNote = new Note();
         newNote.setTitle(title);
         newNote.setContent(content);
-        noteService.add(newNote);
+        newNoteService.add(newNote);
         return new ModelAndView("redirect:/notes/list");
     }
 
     @PostMapping("/update")
-    public ModelAndView updateNote(@RequestParam String id, @RequestParam String title, @RequestParam String content) {
+    public ModelAndView updateNote(@RequestParam long id, @RequestParam String title, @RequestParam String content) {
         Note updateNote = new Note();
         updateNote.setId(id);
         updateNote.setTitle(title);
         updateNote.setContent(content);
-        noteService.update(updateNote);
+        newNoteService.update(updateNote);
         return new ModelAndView("redirect:/notes/list");
     }
 
     @GetMapping("/edit/{id}")
-    public ModelAndView showUpdateNoteForm(@PathVariable String id) {
+    public ModelAndView showUpdateNoteForm(@PathVariable long id) {
         ModelAndView modelAndView = new ModelAndView("update");
-        modelAndView.addObject("note", noteService.getById(id));
+        modelAndView.addObject("note", newNoteService.getById(id));
         return modelAndView;
     }
 
     // Delete
     @GetMapping("/delete/{id}")
-    public ModelAndView deleteNote(@PathVariable String id) {
-        noteService.deleteById(id);
+    public ModelAndView deleteNote(@PathVariable long id) {
+        newNoteService.deleteById(id);
         return new ModelAndView("redirect:/notes/list");
     }
 

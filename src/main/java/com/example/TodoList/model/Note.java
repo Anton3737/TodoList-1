@@ -1,12 +1,24 @@
 package com.example.TodoList.model;
 
+
+
+import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
+@Entity
+@Table(name = "tasks")
 public class Note {
 
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
     private String title;
+    @Column
+
     private String content;
 
     public Note() {
@@ -17,17 +29,17 @@ public class Note {
         this.content = content;
     }
 
-    public Note(String id, String title, String content) {
+    public Note(long id, String title, String content) {
         this.id = id;
         this.title = title;
         this.content = content;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
