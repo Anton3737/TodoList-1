@@ -10,3 +10,29 @@ INSERT INTO tasks (title, content) VALUES
     ('Організація корпоративного заходу', 'Забезпечити місце проведення, розваги та харчування для учасників'),
     ('Підготовка фінансових звітів', 'Зібрати дані та підготувати звіти для подання до влади та банків')
 ;
+
+
+INSERT INTO users (username, password, role, enabled) VALUES
+('John', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
+('Jane', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'admin', true),
+('Alice', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
+('Bob', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
+('Emily', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
+('Michael', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'admin', true),
+('Sarah', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
+('David', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
+('Olivia', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
+('William', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true);
+
+
+--INSERT INTO users (username, password, role, enabled) VALUES
+--    ('John', 'password123', 'user', TRUE),
+--    ('Jane', 'password456', 'admin', TRUE),
+--    ('Alice', 'password789', 'user', TRUE),
+--    ('Bob', 'passwordabc', 'user', TRUE),
+--    ('Emily', 'passworddef', 'user', TRUE),
+--    ('Michael', 'passwordghi', 'admin', TRUE),
+--    ('Sarah', 'passwordjkl', 'user', TRUE),
+--    ('David', 'passwordmno', 'user', TRUE),
+--    ('Olivia', 'passwordpqr', 'user', TRUE),
+--    ('William', 'passwordstu', 'user', TRUE);

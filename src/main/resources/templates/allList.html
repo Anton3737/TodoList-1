@@ -121,6 +121,9 @@
 
 <div class="titleOfPage">
     <h1 th:text="'Notes count: ' + ${notes.size()}"></h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+    </form>
 </div>
 
 <body>
