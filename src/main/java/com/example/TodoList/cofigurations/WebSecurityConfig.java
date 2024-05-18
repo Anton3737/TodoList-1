@@ -16,6 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import javax.sql.DataSource;
 
 @Configuration
+@EnableWebSecurity
 public class WebSecurityConfig  {
 
     @Autowired
@@ -41,13 +42,17 @@ public class WebSecurityConfig  {
 
                 )
                 .formLogin(form -> form
-                        .defaultSuccessUrl("/note/list", true)
+                        .defaultSuccessUrl("/notes/list", true)
                         .permitAll()
-
                 )
                 .logout(logout -> logout.permitAll());
 
         return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
 }

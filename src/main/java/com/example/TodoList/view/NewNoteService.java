@@ -10,13 +10,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
-@Data
+@RequiredArgsConstructor
 public class NewNoteService implements NoteDao {
-    @Autowired
-    private final NoteRepository noteRepository;
 
+    private final NoteRepository noteRepository;
 
     @Override
     public List<Note> listAll() {
@@ -39,7 +37,7 @@ public class NewNoteService implements NoteDao {
     }
 
     @Override
-    public Note update(long id,Note updateNote) {
+    public Note update(long id, Note updateNote) {
         Note note = noteRepository.getReferenceById(id);
         note.setTitle(updateNote.getTitle());
         note.setContent(updateNote.getContent());

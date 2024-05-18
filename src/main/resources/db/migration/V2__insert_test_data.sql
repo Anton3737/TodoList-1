@@ -13,16 +13,17 @@ INSERT INTO tasks (title, content) VALUES
 
 
 INSERT INTO users (username, password, role, enabled) VALUES
-('John', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
-('Jane', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'admin', true),
-('Alice', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
-('Bob', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
-('Emily', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
-('Michael', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'admin', true),
-('Sarah', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
-('David', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
-('Olivia', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true),
-('William', '$2a$10$8aMDCQqAbprVY.MXpm/rqu', 'user', true);
+('John', '$2a$11$5I3ZvzO4hw.Sn/ulHYsefOkz7LLORix64UbplbsTOBqp5xkhm0TqG', 'user', true),
+('Jane', '$2a$11$mNMgZdgRVnpoZ9Vtr1vNOuO.djkSQtI/dUKV.VngqDYXb04jyMNlS', 'admin', true),
+('Alice', '$2a$11$AKt4pPvOmCqE9YUxYR/3aeyuEnKGziyk.VNMv7PXBSViRLI5a7Hl6', 'user', true),
+('Bob', '$2a$11$T6X5uupp1.kzoghJsaXLpu1MCfoD13Mfy.jY74CCxcefanWguFCXq', 'user', true),
+('Emily', '$2a$11$OqJSLVbPlJq8wtWwx5Kr2uOYuKtZndTy0SNTvHjNIDEfhHJ.oDZIu', 'user', true),
+('Michael', '$2a$11$s5awUbzkCR5U4Nw/A17hkecXWfMQUjZxrXr9hhTtMdOlXxRYthYg6', 'admin', true),
+('Sarah', '$2a$11$g.ZVNMlWol9FlHQ1ICMGFuxlrY.m2uLGkpa4RKIUgK7MIOXcsj2LG', 'user', true),
+('David', '$2a$11$XRLueegLGnrH8inige6Jw./1E7g9TnZOfGp.zStQttgjotX3lp9hK', 'user', true),
+('David', '$2a$11$XRLueegLGnrH8inige6Jw./1E7g9TnZOfGp.zStQttgjotX3lp9hK', 'user', true),
+('Olivia', '$2a$11$uqiTRNiAzzLExraQH.8E7.IyLl9XUVp26x6Wj.32yt3n4Kod2kFJi', 'user', true),
+('William', '$2a$11$v6YiRiVSdoWUZu1IofS/M.B3/SOyAvKWC0jqX2OPXLK5MSx1zPhqi', 'user', true);
 
 
 --INSERT INTO users (username, password, role, enabled) VALUES
