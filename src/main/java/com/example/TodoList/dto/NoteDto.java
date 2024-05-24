@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class NoteDto {
 
-    private String id;
+    private long id;
     private String title;
     private String content;
 }

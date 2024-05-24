@@ -11,20 +11,27 @@ import java.util.stream.Collectors;
 @Component
 public class NoteMapper {
 
-    public Note toNoteResponse(Note dto) {
-        Note response = new Note();
-        response.setId(dto.getId());
-        response.setTitle(dto.getTitle());
-        response.setContent(dto.getContent());
-        return response;
+    public Note toResponseDTO(Note note) {
+        if (note == null) {
+            throw new NullPointerException("Note is null");
+        }
+        Note responseDTO = new Note();
+        responseDTO.setId(note.getId());
+        responseDTO.setTitle(note.getTitle());
+        responseDTO.setContent(note.getContent());
+        return responseDTO;
+    }
+
+    public List<Note> toNoteResponses(List<Note> notes) {
+        return notes.stream()
+                .map(this::toResponseDTO)
+                .collect(Collectors.toList());
     }
 
 
-    public List<Note> toNoteResponses(Collection<Note> dtos) {
-        return dtos.stream()
-                .map(this::toNoteResponse).collect(Collectors.toList());
+    public Note fromNoteDTO(Note noteDTO) {
+        return new Note(noteDTO.getTitle(), noteDTO.getContent());
     }
-
 
 
 }
